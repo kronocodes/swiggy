@@ -15,7 +15,7 @@ const Footer = () => {
           </div>
           <div className="w-1/2 flex flex-wrap">
             <ul className="pr-10 text-gray-700">
-              <li className="py-1">Get Help</li>
+              <li className="py-1">Get Hel</li>
               <li className="py-1">Buy gift cards </li>
               <li className="py-1">Add your restaurant</li>
               <li className="py-1">Sign up to deliver</li>
