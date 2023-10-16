@@ -21,9 +21,9 @@ const Carousel = ({ images }) => {
   }, [currentSlide]);
 
   return (
-    <div className="carousel-container">
-      <div className="carousel-slide">
-        <img src={images[currentSlide]} alt={`Slide ${currentSlide}`} />
+    <div className="">
+      <div className="">
+        <img className='max-h-[720px]' src={images[currentSlide]} alt={`Slide ${currentSlide}`} />
       </div>
     </div>
   );

@@ -45,8 +45,9 @@ const Landingpage = () => {
           <div className="fixed bottom-0 w-full font-bold flex justify-between bg-black text-white p-4 md:hidden"></div>
         </div>
       </div>
-      <div className="flex">
-        <div className="flex flex-col ml-10 my-20">
+      
+      <div className="flex w-[100vw]">
+        <div className="flex w-[50vw] flex-col mx-20 my-20">
           <div>
             <p className="text-[44px] font-semibold">Late night at Hostel?</p>
             <p className="text-2xl text-gray-600">
@@ -79,11 +80,9 @@ const Landingpage = () => {
             </ul>
           </div>
         </div>
-        <div className=""><Carousellanding images={images} /> </div>
+        <div className="ml-30 min-w-[50vw] "><Carousellanding images={images} /> </div>
       </div>
-      <div>
-        <img className="" src={hero}></img>
-      </div>
+     
     </>
   );
 };

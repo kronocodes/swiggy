@@ -51,7 +51,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="flex flex-col first-line:border bg-gray-100  text-sm py-2 pr-4 pl-3 ml-5 rounded-3xl ">
-              <Link to="/landingpage">
+              <Link to="/signin">
                 <div className='flex items-center'>
                   <div>
                     <img className='w-4 mr-1' src={profile} alt="pro"></img>
@@ -61,7 +61,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="flex flex-col first-line:border bg-gray-100  text-sm py-2 pr-4 pl-3 ml-3 rounded-3xl">
-              <Link to="/landingpage">Sign up</Link>
+              <Link to="/signup">Sign up</Link>
             </li>
           </ul>
           <div className="fixed bottom-0 w-full font-bold flex justify-between bg-black text-white p-4 md:hidden">

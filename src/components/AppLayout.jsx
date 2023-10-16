@@ -12,6 +12,7 @@ import MenuShimmer from "./Shimmer/MenuShimmer";
 import Landingpage from "./Landingpage";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
+import {SignIn, SignUp} from "./Sign";
 const Profile = lazy(() => import("./Profile"));
 const Search = lazy(() => import("./Search"));
 
@@ -22,7 +23,7 @@ const Layout = () => {
       <Header />
       <Sidebar/>
       <Outlet />
-      <Footer/>
+      {/* <Footer/> */}
     </Provider>
   );
 };
@@ -49,6 +50,12 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",element: <Body />,
+      },
+      {
+        path: "/signin", element: <SignIn/>,
+      },
+      {
+        path: "/signup", element: <SignUp/>,
       },
       {
         path: "restaurant/:id",element: <RestaurantMenu />,
