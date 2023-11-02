@@ -32,10 +32,10 @@ const Header = () => {
             </Link>
           </div>
           <ul className="items-center hidden md:flex md:mr-6">
-            <li className=" bg-gray-100 text-sm py-2 px-3 rounded-3xl">
+            <li className=" bg-gray-100 text-sm py-2 px-3 rounded-3xl font-semibold">
               <Link to="/search">Search</Link>
             </li>
-            <li className=" bg-gray-100 text-sm py-2 px-4 ml-1 rounded-3xl">
+            <li className=" bg-gray-100 text-sm py-2 px-4 ml-1 rounded-3xl font-semibold">
               <Link to="/profile">Profile</Link>
             </li>
             <li className=" bg-black text-white text-sm py-2 px-4 ml-1 rounded-3xl">
@@ -46,22 +46,22 @@ const Header = () => {
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
 </svg>
                   </div>
-                    <div className='pl-1'>Cart-{count}</div>
+                    <div className='pl-1 font-semibold'>Cart-{count}</div>
                   </div>
               </Link>
             </li>
             <li className="flex flex-col first-line:border bg-gray-100  text-sm py-2 pr-4 pl-3 ml-5 rounded-3xl ">
-              <Link to="/signin">
+              <Link to="/landingpage/signin">
                 <div className='flex items-center'>
                   <div>
                     <img className='w-4 mr-1' src={profile} alt="pro"></img>
                   </div>
-                  <div>Log in</div>
+                  <div className='font-semibold'>Log in</div>
                 </div>
               </Link>
             </li>
-            <li className="flex flex-col first-line:border bg-gray-100  text-sm py-2 pr-4 pl-3 ml-3 rounded-3xl">
-              <Link to="/signup">Sign up</Link>
+            <li className="flex flex-col first-line:border bg-gray-100  text-sm font-semibold py-2 pr-4 pl-3 ml-3 rounded-3xl">
+              <Link to="/landingpage/signup">Sign up</Link>
             </li>
           </ul>
           <div className="fixed bottom-0 w-full font-bold flex justify-between bg-black text-white p-4 md:hidden">

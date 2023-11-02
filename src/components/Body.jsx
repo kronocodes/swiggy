@@ -7,7 +7,7 @@ import useOnline from "../utils/useOnline";
 import Carousel from "./Carousel";
 import { configres } from "../utils/constants";
 const Body = () => {
-  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [allRestaurants, setAllRestaurants] = useState(configres);
   const [totalOpenRestaurants, setTotalOpenRestaurants] = useState();
   const [sortBy, setSortBy] = useState("RELEVANCE");
   const [offset, setOffset] = useState(0);
@@ -111,11 +111,11 @@ const Body = () => {
   return allRestaurants.length === 0 ? (
     <>
     <Carousel/>
-    <Shimmer numberOfCards={12} />
+    <Shimmer numberOfCards={20} />
     </>
   ) : (
     <>
-       <Carousel/>
+      <Carousel/>
       <div className="px-8 justify-between mt-4 2xl:m-16">
         <div className="flex justify-between h-12 items-center  border-b-2">
           <h1 className="font-bold text-lg">
@@ -188,7 +188,7 @@ const Body = () => {
                 </Link>
               );
             })}
-          {loading && <ShimmerCard />}
+          {/*loading && <ShimmerCard />*/}
         </div>
       </div>
     </>

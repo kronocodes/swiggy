@@ -36,16 +36,16 @@ const RestaurantMenu = () => {
   return !restaurantInfo ? (
     <MenuShimmer numberOfCards={10} />
   ) : (
-            <div className="max-w-[800px] mt-2 mx-auto px-6">
+    <div className="max-w-[950px] mt-2 mx-auto px-6">
       <div className=" flex justify-between mb-4">
         <div>
-          <h1 className="font-extrabold text-2xl my-2">
+          <h1 className="font-bold text-3xl my-3">
             {restaurantInfo.name}
           </h1>
-          <h1 className="text-xs text-gray-500">
+          <h1 className="text-sm text-gray-700">
             {restaurantInfo.cuisines.join(", ")}
           </h1>
-          <h1 className="text-xs text-gray-500">
+          <h1 className="text-sm text-gray-700">
             {restaurantInfo.areaName},{restaurantInfo.sla.lastMileTravelString}
           </h1>
         </div>
@@ -105,7 +105,7 @@ const RestaurantMenu = () => {
         </div>
       )}
       {cartItems.length > 0 && (
-        <div className="bg-green-700 text-xl px-6 text-white text-center fixed inset-x-0 lg:inset-x-96 bottom-12 rounded-md  border-b-4 mx-auto">
+        <div className="w-full bg-green-700 text-xl text-white text-center font-semibold fixed bottom-0 border-b-4">
           <Link to="/cart">
             <h1 className="m-3">Your cart has - {count} items</h1>
           </Link>

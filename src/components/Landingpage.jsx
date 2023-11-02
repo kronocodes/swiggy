@@ -1,51 +1,16 @@
 import React from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { Link } from "react-router-dom";
-import profile from "../assets/profile.svg";
-import hero from "../assets/herobanner.png";
 import Carousellanding from "./Carousellanding";
-import image1 from "../assets/image1.jpg"
-import image2 from "../assets/image2.jpg"
-import image3 from "../assets/image3.jpg"
-import image4 from "../assets/image4.jpg"
-import image5 from "../assets/image5.jpg"
+import image1 from "../assets/image1.jpg";
+import image2 from "../assets/image2.jpg";
+import image3 from "../assets/image3.jpg";
+import image4 from "../assets/image4.jpg";
+import image5 from "../assets/image5.jpg";
 
 const Landingpage = () => {
-  const images = [image1,image2,image3,image4, image5];
+  const images = [image1, image2, image3, image4, image5];
+  const cities = ["Mumbai", "Delhi", "Bangalore", "Chennai", "Kolkata", "Hyderabad", "Pune", "Jaipur", "Agra", "Goa", "Kochi", "Ahmedabad", "Varanasi", "Amritsar", "Mysore","Lucknow", "Chandigarh", "Noida", "Gurgaon", "Indore", "Bhopal", "Surat", "Vadodara", "Nagpur", "Coimbatore", "Visakhapatnam", "Trivandrum", "Bhubaneswar", "Ranchi", "Guwahati"];
   return (
     <>
-      <div className="bg-white h-20 border-b sticky top-0 items-center">
-        <div className="flex justify-between py-3">
-          <div className="flex items-center ">
-            <div className="mx-6 cursor-pointer">
-              <RxHamburgerMenu size={25} />
-            </div>
-            <Link to="/">
-              <div className="flex">
-                <div className="w-full ml-2 font-[700] text-[30px]">Food</div>
-                <div className="w-full text-[30px]">le</div>
-              </div>
-            </Link>
-          </div>
-          <ul className="items-center hidden md:flex md:mr-6">
-            <li className="flex flex-col first-line:border bg-gray-100  text-sm py-2 pr-4 pl-3 ml-5 rounded-3xl ">
-              <Link to="/landingpage">
-                <div className="flex items-center">
-                  <div>
-                    <img className="w-4 mr-1" src={profile} alt="pro"></img>
-                  </div>
-                  <div>Log in</div>
-                </div>
-              </Link>
-            </li>
-            <li className="flex flex-col first-line:border bg-black text-white text-sm py-2 pr-4 pl-3 ml-3 rounded-3xl">
-              <Link to="/landingpage">Sign up</Link>
-            </li>
-          </ul>
-          <div className="fixed bottom-0 w-full font-bold flex justify-between bg-black text-white p-4 md:hidden"></div>
-        </div>
-      </div>
-      
       <div className="flex w-[100vw]">
         <div className="flex w-[50vw] flex-col mx-20 my-20">
           <div>
@@ -57,14 +22,21 @@ const Landingpage = () => {
           <div className="items-center mt-10 bg-gray-100 md:w-[40rem] flex ">
             <input
               type="text"
+              id="city"
+              list="cities"
               placeholder="Search for your location"
-              className="bg-gray-100 pl-4 px-4 py-3 md:w-[40rem]"
+              className="bg-gray-100 p-3 w-[35rem]"
               //  value={searchText}
               onChange={(e) => {
                 setSearchText(e.target.value);
               }}
             />
-            <button className="px-4 py-3 border-black bg-green-600 pl-5">
+            <datalist className="" id="cities">
+              {cities.map((city, index) => (
+                <option key={index} value={city} />
+              ))}
+            </datalist>
+            <button className="px-4 py-3 border-black bg-yellow-400 pl-5">
               Search
             </button>
           </div>
@@ -80,9 +52,35 @@ const Landingpage = () => {
             </ul>
           </div>
         </div>
-        <div className="ml-30 min-w-[50vw] "><Carousellanding images={images} /> </div>
+        <div className="ml-30 min-w-[50vw] ">
+          <Carousellanding images={images} />{" "}
+        </div>
       </div>
-     
+      <div className="border flex justify-between">
+        <div className="flex flex-col items-center">
+          <p className="text-lg font-semibold">Lightning-Fast Delivery</p>
+          <p className="text-sm text-center">
+            Experience Foodl's superfast delivery for food delivered fresh & on
+            time
+          </p>
+        </div>
+        <div className="flex flex-col items-center">
+          <div id="logo2"></div>
+          <p className="text-lg font-semibold">Live Order Tracking</p>
+          <p className="text-sm text-center">
+            Know where your order is at all times, from the restaurant to your
+            doorstep
+          </p>
+        </div>
+        <div className="flex flex-col items-center">
+          <div id="logo3"></div>
+          <p className="text-lg font-semibold">No Minimum Order</p>
+          <p className="text-sm text-center">
+            Order in for yourself or for the group, with no restrictions on
+            order value
+          </p>
+        </div>
+      </div>
     </>
   );
 };

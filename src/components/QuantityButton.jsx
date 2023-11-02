@@ -24,7 +24,7 @@ const QuantityButton = ({ data, restInfo }) => {
   };
   return cartItems.length <= 0 || index < 0 ? (
     <button
-      className="font-semibold text-lg border-2 border-gray-300 rounded hover:bg-gray-300 shadow-lg w-20 "
+      className="flex items-center justify-center font-semibold text-lg border-2 border-gray-300 rounded hover:bg-gray-300 shadow-lg w-24"
       onClick={() => {
         addItemsToCart(data, 1);
       }}
@@ -32,18 +32,18 @@ const QuantityButton = ({ data, restInfo }) => {
       Add
     </button>
   ) : (
-    <div className="flex shadow-lg">
+    <div className="flex shadow-lg items-center justify-center border-2 w-24">
       <button
-        className="font-semibold text-lg border-2 border-gray-300 px-2 border-r-0 hover:bg-gray-300"
+        className="text-lg w-1/3 hover:bg-gray-300"
         onClick={() => reduceItemsToCart(data, 1)}
       >
         -
       </button>
-      <h1 className="px-2 border-y-2 border-gray-300">
+      <h1 className="flex justify-center w-1/3">
         {index > -1 ? cartItems[index] && cartItems[index].quantity : 0}
       </h1>
       <button
-        className="font-semibold text-lg px-2  border-2 border-gray-300 border-l-0 hover:bg-gray-300"
+        className="text-lg w-1/3 hover:bg-gray-300"
         onClick={() => addItemsToCart(data, 1)}
       >
         +
