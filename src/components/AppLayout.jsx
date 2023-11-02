@@ -15,7 +15,6 @@ import Sidebar from "./Sidebar";
 import {SignIn, SignUp} from "./Sign";
 import Headerlp from "./Headerlp";
 import Carousel from "./Carousel";
-const Profile = lazy(() => import("./Profile"));
 const Search = lazy(() => import("./Search"));
 
 
@@ -71,10 +70,6 @@ export const router = createBrowserRouter([
       },
       {
         path: "/search",element: (<Suspense fallback={<MenuShimmer numberOfCards={6} />}>{" "}<Search /></Suspense>),
-      },
-      {
-        path: "/profile",
-        element: (<Suspense fallback={<MenuShimmer numberOfCards={6} />}><Profile /></Suspense>),
       },
     ],
   },

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { toggleMenu } from '../utils/menuSlice';
 import profile from "../assets/profile.svg"
-import cart from "../assets/cart.svg"
 
 
 const Header = () => {
@@ -34,9 +33,6 @@ const Header = () => {
           <ul className="items-center hidden md:flex md:mr-6">
             <li className=" bg-gray-100 text-sm py-2 px-3 rounded-3xl font-semibold">
               <Link to="/search">Search</Link>
-            </li>
-            <li className=" bg-gray-100 text-sm py-2 px-4 ml-1 rounded-3xl font-semibold">
-              <Link to="/profile">Profile</Link>
             </li>
             <li className=" bg-black text-white text-sm py-2 px-4 ml-1 rounded-3xl">
               <Link to="/cart">
