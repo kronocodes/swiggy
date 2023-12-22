@@ -19,42 +19,44 @@ const Body = () => {
     fetchRestaurant();
     // fetchRestaurantData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [offset]);
+  }, []);
 
   const fetchRestaurant = async () => {
-    if (offset === 0) {
+    // if (true) {
       
       const data1 = await fetch(
-        `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&sortBy=${sortBy}&page_type=DESKTOP_WEB_LISTING`
+        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&sortBy=RELAVANCE&page_type=DESKTOP_WEB_LISTING`
       );
       const json = await data1.json();
-      let i = 0;
-      async function checkJsonData(jsonData) {
-        while (i < jsonData?.data?.cards.length) {
-          let checkData =
-            json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
-              ?.restaurants;
+      const resData =
+        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+      // async function checkJsonData(jsonData) {
+      //   while (i < jsonData?.data?.cards.length) {
+      //     let checkData =
+      //       json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
+      //         ?.restaurants;
 
-          if (checkData !== undefined) {
-            return checkData;
-          }
+      //     if (checkData !== undefined) {
+      //       return checkData;
+      //     }
 
-          i++;
-        }
-      }
-      const restaurants = await checkJsonData(json);
+      //     i++;
+      //   }
+      // }
 
-      setAllRestaurants(allRestaurants.concat(restaurants));
-      console.log(allRestaurants);
-    } else {
-      let FETCH_MORE_RESTAURANT_DATA_URL = `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&offset=${offset}&sortBy=${sortBy}&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`;
-      const data = await fetch(FETCH_MORE_RESTAURANT_DATA_URL);
-      const json = await data.json();
-    const data2=  json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-      ?.restaurants;
-      //setAllRestaurants((prev) => prev.concat(data2));
-      console.log("Printing second data", data2);
-    }
+      setAllRestaurants(allRestaurants.concat(resData));
+      console.log("All rest",allRestaurants);
+    // }
+    //  else {
+    //   let FETCH_MORE_RESTAURANT_DATA_URL = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&offset=${offset}&sortBy=${sortBy}&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`;
+    //   const data = await fetch(FETCH_MORE_RESTAURANT_DATA_URL);
+    //   const json = await data.json();
+    // const data2=  json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+    //   ?.restaurants;
+    //   //setAllRestaurants((prev) => prev.concat(data2));
+    //   console.log("Printing second data", data2);
+    // }
   };
   // console.log("Printing second data",data2)
 
@@ -83,27 +85,27 @@ const Body = () => {
   // setLoading(false);
   // };
 
-  const handleScroll = async () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop + 1 >=
-      document.documentElement.scrollHeight
-    ) {
-      setLoading(true);
-      setOffset(offset+ 20);
-    }
-  };
+  // const handleScroll = async () => {
+  //   if (
+  //     window.innerHeight + document.documentElement.scrollTop + 1 >=
+  //     document.documentElement.scrollHeight
+  //   ) {
+  //     setLoading(true);
+  //     setOffset(offset+ 20);
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
-  function updateSortBy(val) {
-    setAllRestaurants([]);
-    setOffset(20);
-    setSortBy(val);
-  }
+  // function updateSortBy(val) {
+  //   setAllRestaurants([]);
+  //   setOffset(20);
+  //   setSortBy(val);
+  // }
 
   console.log("Printing from Body AllRes", allRestaurants);
   if (!allRestaurants) return null;
