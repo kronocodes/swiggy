@@ -118,64 +118,11 @@ const Body = () => {
   ) : (
     <>
       <Carousel/>
-      <div className="px-8 justify-between mt-4 2xl:m-16">
+      <div className="justify-between mt-4 max-w-[1600px] mx-auto">
         <div className="flex justify-between h-12 items-center  border-b-2">
-          <h1 className="font-bold text-lg">
+          <h1 className="font-bold text-lg mx-5">
             {allRestaurants.length} Restaurants
           </h1>
-          <ul className=" hidden md:flex justify-between text-gray-500">
-            <li
-              className={`px-3 cursor-pointer ${
-                sortBy === "RELEVANCE"
-                  ? "text-black underline"
-                  : "hover:text-black "
-              }`}
-              onClick={() => updateSortBy("RELEVANCE")}
-            >
-              Relevance
-            </li>
-
-            <li
-              className={`px-3 cursor-pointer ${
-                sortBy === "DELIVERY_TIME"
-                  ? "text-black underline"
-                  : "hover:text-black "
-              }`}
-              onClick={() => updateSortBy("DELIVERY_TIME")}
-            >
-              Delivery Time
-            </li>
-            <li
-              className={`px-3 cursor-pointer ${
-                sortBy === "RATING"
-                  ? "text-black underline"
-                  : "hover:text-black "
-              }`}
-              onClick={() => updateSortBy("RATING")}
-            >
-              Rating
-            </li>
-            <li
-              className={`px-3 cursor-pointer ${
-                sortBy === "COST_FOR_TWO"
-                  ? "text-black underline"
-                  : "hover:text-black "
-              }`}
-              onClick={() => updateSortBy("COST_FOR_TWO")}
-            >
-              Cost:Low to High
-            </li>
-            <li
-              className={`px-3 cursor-pointer ${
-                sortBy === "COST_FOR_TWO_H2L"
-                  ? "text-black underline"
-                  : "hover:text-black "
-              }`}
-              onClick={() => updateSortBy("COST_FOR_TWO_H2L")}
-            >
-              Cost:High to Low
-            </li>
-          </ul>
         </div>
         <div className="flex flex-wrap justify-center ">
           {allRestaurants &&

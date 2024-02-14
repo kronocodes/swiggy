@@ -31,7 +31,7 @@ const Cart = () => {
         <h1 className="p-3 m-3 uppercase font-extrabold mx-auto">{toastMsg}</h1>  
         </div>
       )}
-      <div className="border-1 border-gray-500 shadow-md mt-3 max-w-sm p-5 items-center mx-auto md:max-w-3xl">
+      <div className="border-1 border-gray-500 shadow-md mt-5 min-h-[46vh] max-w-sm p-5 items-center mx-auto md:max-w-3xl">
         <h1 className="font-semibold pb-2">
           {cartItems[0] && cartItems[0].item.restaurantName}
         </h1>

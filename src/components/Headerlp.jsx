@@ -11,10 +11,7 @@ const Headerlp = () => {
     <>
       <div className="bg-white h-20 border-b sticky top-0 items-center">
         <div className="flex justify-between py-3">
-          <div className="flex items-center ">
-            <div className="mx-6 cursor-pointer">
-              <RxHamburgerMenu size={25} />
-            </div>
+          <div className="flex items-center pl-5">
             <Link to="/">
               <div className="flex">
                 <div className="w-full ml-2 font-[700] text-[30px]">Food</div>
