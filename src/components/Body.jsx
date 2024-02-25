@@ -17,8 +17,6 @@ const Body = () => {
 
   useEffect(() => {
     fetchRestaurant();
-    // fetchRestaurantData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchRestaurant = async () => {
@@ -31,81 +29,12 @@ const Body = () => {
       const resData =
         json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
-      // async function checkJsonData(jsonData) {
-      //   while (i < jsonData?.data?.cards.length) {
-      //     let checkData =
-      //       json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
-      //         ?.restaurants;
-
-      //     if (checkData !== undefined) {
-      //       return checkData;
-      //     }
-
-      //     i++;
-      //   }
-      // }
-
       setAllRestaurants(allRestaurants.concat(resData));
       console.log("All rest",allRestaurants);
-    // }
-    //  else {
-    //   let FETCH_MORE_RESTAURANT_DATA_URL = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&offset=${offset}&sortBy=${sortBy}&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`;
-    //   const data = await fetch(FETCH_MORE_RESTAURANT_DATA_URL);
-    //   const json = await data.json();
-    // const data2=  json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-    //   ?.restaurants;
-    //   //setAllRestaurants((prev) => prev.concat(data2));
-    //   console.log("Printing second data", data2);
-    // }
+
   };
-  // console.log("Printing second data",data2)
 
-  // const fetchRestaurantData = async () => {
-  // if (offset === 0) {
-  //   const data = await fetch(
-  //     `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&sortBy=${sortBy}&page_type=DESKTOP_WEB_LISTING`
-  //   );
-  //   const jsonData = await data.json();
-  //   const data2 = jsonData?.data?.cards?.find(
-  //     (item) => item.cardType === "seeAllRestaurants"
-  //   );
-  //   const modifiedData = jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0]?.info
-  //   setTotalOpenRestaurants(data2?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0]?.info);
-  //   setAllRestaurants(modifiedData);
-  //   console.log(allRestaurants)
-  // } else {
-  //   //api call is diff on infinite scroll
-  //   let FETCH_MORE_RESTAURANT_DATA_URL = `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&offset=${offset}&sortBy=${sortBy}&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`;
-  //   const data = await fetch(FETCH_MORE_RESTAURANT_DATA_URL);
-  //   const jsonData = await data.json();
-  //   const data2 = jsonData?.data?.cards;
-  //   const modifiedData = data2.map((card) => card.data);
-  //   setAllRestaurants((prev) => prev.concat(modifiedData));
-  // }
-  // setLoading(false);
-  // };
-
-  // const handleScroll = async () => {
-  //   if (
-  //     window.innerHeight + document.documentElement.scrollTop + 1 >=
-  //     document.documentElement.scrollHeight
-  //   ) {
-  //     setLoading(true);
-  //     setOffset(offset+ 20);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
-  // function updateSortBy(val) {
-  //   setAllRestaurants([]);
-  //   setOffset(20);
-  //   setSortBy(val);
-  // }
+ 
 
   console.log("Printing from Body AllRes", allRestaurants);
   if (!allRestaurants) return null;

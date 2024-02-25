@@ -11,11 +11,10 @@ const RestaurantMenu = () => {
   const [restaurantMenu, setRestaurantMenu] = useState([]);
   const cartItems = useSelector((store) => store.cart.items);
   const count = cartItems.reduce((total, item) => total + item.quantity, 0);
-  //   const [categoryType, setCategoryType] = useState([]);
+    // const [categoryType, setCategoryType] = useState([]);
 
   useEffect(() => {
     getRestaurantMenu();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const getRestaurantMenu = async () => {
@@ -30,7 +29,7 @@ const RestaurantMenu = () => {
     const cardsWithTitle = data2
       .filter((card) => card.card.card.title)
       .map((card) => card.card.card);
-    setRestaurantInfo(restaurant.data.cards[0].card.card.info);
+    setRestaurantInfo(restaurant.data.cards[2].card.card.info);
     setRestaurantMenu(cardsWithTitle);
   };
   return !restaurantInfo ? (
@@ -40,13 +39,13 @@ const RestaurantMenu = () => {
       <div className=" flex justify-between mb-4">
         <div>
           <h1 className="font-bold text-3xl my-3">
-            {restaurantInfo.name}
+            {restaurantInfo?.name}
           </h1>
           <h1 className="text-sm text-gray-700">
-            {restaurantInfo.cuisines.join(", ")}
+            {restaurantInfo?.cuisines.join(", ")}
           </h1>
           <h1 className="text-sm text-gray-700">
-            {restaurantInfo.areaName},{restaurantInfo.sla.lastMileTravelString}
+            {restaurantInfo?.areaName},{restaurantInfo?.sla.lastMileTravelString}
           </h1>
         </div>
         <div className="border rounded-xl items-center p-2 mt-5">
@@ -65,15 +64,15 @@ const RestaurantMenu = () => {
                 d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
               />
             </svg>
-            {restaurantInfo.avgRatingString}
+            {restaurantInfo?.avgRatingString}
           </div>
           <h1 className="text-xs text-gray-500">
-            {restaurantInfo.totalRatingsString}
+            {restaurantInfo?.totalRatingsString}
           </h1>
         </div>
       </div>
       <h1 className=" text-xs text-gray-500  pb-4 border-dashed border-b-2">
-        {restaurantInfo.feeDetails.message}
+        {restaurantInfo?.feeDetails.message}
       </h1>
       <div className="flex items-center mt-4 pb-4 border-b-2">
         <svg
@@ -89,9 +88,9 @@ const RestaurantMenu = () => {
           />
         </svg>
         <h1 className="mr-3 font-extrabold">
-          {restaurantInfo.sla.maxDeliveryTime} MINS
+          {restaurantInfo?.sla.maxDeliveryTime} MINS
         </h1>
-        <h1 className="font-extrabold">{restaurantInfo.costForTwoMessage}</h1>
+        <h1 className="font-extrabold">{restaurantInfo?.costForTwoMessage}</h1>
       </div>
       {restaurantMenu && (
         <div className="mb-8">
@@ -99,7 +98,7 @@ const RestaurantMenu = () => {
             <MenuCategory
               key={index}
               data={category}
-              restInfo={restaurantInfo.name}
+              restInfo={restaurantInfo?.name}
             />
           ))}
         </div>
