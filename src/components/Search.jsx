@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { searchResults } from "../utils/searchSlice";
 import search from "../assets/search.jpeg"
 import SearchIcon from "../assets/Search.svg"
+import { Link } from "react-router-dom";
 
 const Search = () => {
   const [searchText, setSearchText] = useState("");
@@ -28,7 +29,7 @@ const Search = () => {
 
   const searchSuggestions = async () => {
     const data = await fetch(
-      `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/search/suggest?lat=18.655381&lng=73.761024&str=${searchText}&trackingId=null`
+      `https://www.swiggy.com/dapi/restaurants/search/suggest?lat=18.655381&lng=73.761024&str=${searchText}&trackingId=null`
     );
     const data2 = await data.json();
 
@@ -66,6 +67,7 @@ const Search = () => {
       {suggestedRestaurants ? (
         <div className="col-start-2 col-span-4 md:w-[45rem]">
           {suggestedRestaurants.map((index) => (
+            <Link >
             <div className="border-b border-gray-400 p-5 flex my-5 hover:scale-105 hover:bg-gray-100" onClick={() => handleClick(index)} key={index.text}>
               <div>
                 <img
@@ -79,6 +81,7 @@ const Search = () => {
                 <h1>{index.type}</h1>
               </div>
             </div>
+            </Link>
           ))}
         </div>
       ) : (

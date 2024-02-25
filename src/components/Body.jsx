@@ -39,12 +39,7 @@ const Body = () => {
   console.log("Printing from Body AllRes", allRestaurants);
   if (!allRestaurants) return null;
 
-  return allRestaurants.length === 0 ? (
-    <>
-    <Carousel/>
-    <Shimmer numberOfCards={20} />
-    </>
-  ) : (
+  return (
     <>
       <Carousel/>
       <div className="justify-between mt-4 max-w-[1600px] mx-auto">
