@@ -27,8 +27,7 @@ const Body = () => {
       );
       const json = await data1.json();
       const resData =
-        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
       setAllRestaurants(allRestaurants.concat(resData));
       console.log("All rest",allRestaurants);
 
