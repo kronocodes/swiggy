@@ -15,6 +15,7 @@ import Sidebar from "./Sidebar";
 import {SignIn, SignUp} from "./Sign";
 import Headerlp from "./Headerlp";
 import Carousel from "./Carousel";
+import ScrollToTop from "./ScrollToTop";
 const Search = lazy(() => import("./Search"));
 
 
@@ -56,7 +57,12 @@ export const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Layout />,
+    element:(
+      <>
+      <ScrollToTop />
+      <Layout />
+      </>
+    ),
     errorElement: <Error />,
     children: [
       {

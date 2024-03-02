@@ -13,14 +13,12 @@ const Body = () => {
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState(true);
   const isOnline = useOnline();
-  // var data2=[];
 
   useEffect(() => {
     fetchRestaurant();
   }, []);
 
   const fetchRestaurant = async () => {
-    // if (true) {
       
       const data1 = await fetch(
         `https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&sortBy=RELAVANCE&page_type=DESKTOP_WEB_LISTING`
@@ -32,8 +30,6 @@ const Body = () => {
       console.log("All rest",allRestaurants);
 
   };
-
- 
 
   console.log("Printing from Body AllRes", allRestaurants);
   if (!allRestaurants) return null;

@@ -22,14 +22,17 @@ const RestaurantMenu = () => {
       `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.655381&lng=73.761024&restaurantId=${id}&submitAction=ENTER`
     );
     const restaurant = await data.json();
-    const data2 =
-      restaurant.data?.cards?.find((card) => card.groupedCard)?.groupedCard
+    const data2 =restaurant.data?.cards?.find((card) => card.groupedCard)?.groupedCard
         ?.cardGroupMap?.REGULAR?.cards || [];
 
     const cardsWithTitle = data2
       .filter((card) => card.card.card.title)
       .map((card) => card.card.card);
-    setRestaurantInfo(restaurant.data.cards[2].card.card.info);
+      for(let i=0; i<restaurant.data.cards.length; i++){
+        if(restaurant.data.cards[0].card.card.info)
+        setRestaurantInfo(restaurant.data.cards[0].card.card.info);
+        break;
+      }
     setRestaurantMenu(cardsWithTitle);
   };
   return !restaurantInfo ? (
