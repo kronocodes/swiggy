@@ -21,7 +21,8 @@ const Body = () => {
   const fetchRestaurant = async () => {
       
       const data1 = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&sortBy=RELAVANCE&page_type=DESKTOP_WEB_LISTING`
+        "https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
+        // `https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.655381&lng=73.761024&sortBy=RELAVANCE&page_type=DESKTOP_WEB_LISTING`
       );
       const json = await data1.json();
       const resData =
