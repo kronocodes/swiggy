@@ -27,7 +27,7 @@ const Cart = () => {
   ) : (
     <>
       {toastMsg && (
-        <div className="flex max-w-xl border-spacing-x-64 border-gray-600 shadow-xl shadow-gray-600 items-center rounded-lg mx-auto mt-5 bg-green-100">
+        <div className="bg-green-700 text-xl text-white text-center font-semibold bottom-0 left-0 right-0 fixed">
         <h1 className="p-3 m-3 uppercase font-extrabold mx-auto">{toastMsg}</h1>  
         </div>
       )}

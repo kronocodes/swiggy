@@ -13,7 +13,7 @@ const Card = (data) => {
   } = data;
   return (
     <div className="border rounded-lg border-gray-200  hover:shadow-2xl hover: p-2 m-2">
-      <img src={IMAGE_ID + cloudinaryImageId} alt="restaurant"></img>
+      <img className="h-[300px] w-[300px]" src={IMAGE_ID + cloudinaryImageId} alt="restaurant"></img>
       <h1 className="pt-2 font-bold">{name}</h1>
       <h2 className="pt-2 text-gray-500 text-sm">{cuisines?.join(", ")}</h2>
       <div className="py-4 flex justify-between items-center border-b-2 text-gray-500 text-sm md:text-xs">

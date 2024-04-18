@@ -36,7 +36,7 @@ const MenuItem = ({ data, restInfo }) => {
             <div className="">
               <img
                 className="h-[120px] w-[140px] rounded-2xl border-gray-700 shadow-md object-cover"
-                src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/${data.imageId}`}
+                src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${data.imageId}`}
                 alt="img"
               ></img>
             </div>

@@ -30,8 +30,8 @@ const RestaurantMenu = () => {
       .filter((card) => card.card.card.title)
       .map((card) => card.card.card);
       for(let i=0; i<restaurant.data.cards.length; i++){
-        if(restaurant.data.cards[0].card.card.info)
-        setRestaurantInfo(restaurant.data.cards[0].card.card.info);
+        if(restaurant.data.cards[2].card.card.info)
+        setRestaurantInfo(restaurant.data.cards[2].card.card.info);
         break;
       }
     setRestaurantMenu(cardsWithTitle);
@@ -108,7 +108,7 @@ const RestaurantMenu = () => {
         </div>
       )}
       {cartItems.length > 0 && (
-        <div className="w-full bg-green-700 text-xl text-white text-center font-semibold fixed bottom-0 border-b-4">
+        <div className="bg-green-700 text-xl text-white text-center font-semibold bottom-0 left-0 right-0 fixed">
           <Link to="/cart">
             <h1 className="m-3">Your cart has - {count} items</h1>
           </Link>
