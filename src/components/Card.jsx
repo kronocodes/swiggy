@@ -12,11 +12,11 @@ const Card = (data) => {
     aggregatedDiscountInfoV3,
   } = data;
   return (
-    <div className="border rounded-lg border-gray-200  hover:shadow-2xl hover: p-2 m-2">
-      <img className="h-[300px] w-[300px]" src={IMAGE_ID + cloudinaryImageId} alt="restaurant"></img>
+    <div className="border rounded-lg border-gray-300  hover:shadow-2xl hover: p-2 m-2">
+      <img className="h-[200px] w-[280px] object-cover" src={IMAGE_ID + cloudinaryImageId} alt="restaurant"></img>
       <h1 className="pt-2 font-bold">{name}</h1>
-      <h2 className="pt-2 text-gray-500 text-sm">{cuisines?.join(", ")}</h2>
-      <div className="py-4 flex justify-between items-center border-b-2 text-gray-500 text-sm md:text-xs">
+      <h2 className="pt-1 text-gray-500 text-sm">{cuisines?.join(", ")}</h2>
+      <div className="py-2 flex justify-between items-center border-b-2 text-gray-500 text-sm md:text-xs">
         {avgRating && avgRating >= 4 ? (
           <div className="flex p-1 bg-green-700 text-xs text-white items-center">
             <svg
@@ -59,7 +59,7 @@ const Card = (data) => {
         <div>.</div>
         <h1 className="xl:block">{costForTwo}</h1>
       </div>
-      <h2 className="pt-2 text-amber-900 text-sm font-bold text-center">{aggregatedDiscountInfoV3?.header},{aggregatedDiscountInfoV3?.subHeader}</h2>
+      <h2 className="pt-1 text-amber-900 text-sm font-bold text-center">{aggregatedDiscountInfoV3?.header},{aggregatedDiscountInfoV3?.subHeader}</h2>
     </div>
   );
 };

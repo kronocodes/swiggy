@@ -38,8 +38,8 @@ const Body = () => {
   return (
     <>
       <Carousel/>
-      <div className="justify-between mt-4 max-w-[1600px] mx-auto">
-        <div className="flex justify-between h-12 items-center  border-b-2">
+      <div className="justify-between mt-2 max-w-[1600px] mx-auto">
+        <div className="flex justify-between h-10 items-center  border-b-2">
           <h1 className="font-bold text-lg mx-5">
             {allRestaurants.length} Restaurants
           </h1>

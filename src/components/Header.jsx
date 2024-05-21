@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-white h-20 border-b max-w-[1600px] shadow-md sticky top-0 mx-auto" >
+      <div className="bg-white h-[68px] border-b max-w-[1600px] shadow-md sticky top-0 mx-auto" >
         <div className="flex justify-between py-3 px-5">
           <div className="flex items-center">
             <Link to="/">
